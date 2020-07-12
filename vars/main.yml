@@ -1,0 +1,4 @@
+---
+# vars file for rabbitmq
+
+BIONIC_ERLANG_VERSION: 22.x

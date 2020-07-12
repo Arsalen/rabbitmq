@@ -1,0 +1,11 @@
+---
+# tasks file for rabbitmq
+
+- name: Install prerequisites
+  import_tasks: install_prerequisites.yml
+
+- name: Install Erlang
+  import_tasks: install_erlang.yml
+
+- name: Install RabbitMQ
+  import_tasks: install_rabbitmq.yml

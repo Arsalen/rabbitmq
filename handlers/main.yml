@@ -1,0 +1,7 @@
+---
+# handlers file for rabbitmq
+
+- name: Start service
+  service:
+    name: rabbitmq-server
+    state:  started
