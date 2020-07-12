@@ -1,31 +1,48 @@
-Role Name
+RabbitMQ
 =========
 
-A brief description of the role goes here.
+Install RabbitMQ on Ubuntu 18.04 (Bionic).
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Ubuntu Bionic.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Configures apt to install the most recent Erlang `22.x` version available in the repository and use packages for Ubuntu `18.04` (Bionic). More recent Ubuntu releases should also use this distribution name.
+
+```yml
+BIONIC_ERLANG_VERSION: 22.x
+```
 
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+These dependencies are available by default in Ubuntu 18.04 (Bionic).
+
+- curl
+- gnupg
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Example playbook.
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+```yml
+- hosts:
+    - server
+  roles:
+    - arsalen.rabbitmq
+```
+
+Example inventory.
+
+```INI
+[server]
+123.456.78.9    ansible_user=user  ansible_ssh_pass=pass  ansible_become=true ansible_become_pass=pass
+```
 
 License
 -------
@@ -35,4 +52,4 @@ BSD
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+@arsalen ([github](https://github.com/Arsalen), [medium](https://medium.com/@arsalen.hagui), [linkedin](https://www.linkedin.com/in/arsalen-hagui-506979123/))
